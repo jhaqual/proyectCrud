@@ -27,6 +27,11 @@ class UserController extends Controller
         return back();
     }
 
+    public function edit($id)
+    {
+        //
+    }
+
     public function destroy(User $user)
     {
         $user->delete();

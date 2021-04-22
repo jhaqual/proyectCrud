@@ -14,8 +14,22 @@
     </head>
     <body>
         <div class="container">
+            <h4 style= "text-align: center;">Gestión de Clientes</h4>
             <div class="row">
-                <div class="col-sm-8 mx-auto">
+                <div class="col-sm-6 mx-auto my-2" >
+                    <form action="" style= "display: flex;">
+                        <tr>
+                            <td class="form-row ">
+                                <input type="text" class="form-control" name= "text">
+                            </td>
+
+                            <td class="col-sm-2 mx-auto my-3">
+                                <input type="submit" class="btn btn-primary" value="Buscar" style="margin-left: 10px;">
+                            </td>
+                        </tr>
+                    </form>
+                </div>
+                    <div class="col-sm-8 mx-auto">
 
 
                     <table class="table">
@@ -25,6 +39,7 @@
                                 <th>Nombre</th>
                                 <th>Email</th>
                                 <th>&nbsp;</th>
+                                <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,6 +48,17 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
+                                <td>
+                                    <form action="{{ route('users.edit' , $user) }}" method="GET">
+                                        @method('EDIT')
+                                        @csrf
+                                        <input
+                                        type="submit"
+                                        value="actualizar"
+                                        class="btn btn-sm btn-danger"
+                                        onclick="return confirm('¿Desea eliminar este usuario ?')">
+                                    </form>
+                                </td>
                                 <td>
                                     <form action="{{ route('users.destroy' , $user) }}" method="POST">
                                         @method('DELETE')
