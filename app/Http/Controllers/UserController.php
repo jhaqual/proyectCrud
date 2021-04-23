@@ -10,20 +10,16 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $users = User:: all();
-        return view('users.index', compact('users'));
-/*
+
         $text=trim($request->get('text'));
-        $users=DB::table('users')->select('id', 'name', 'email')
+        $users=DB::table('users')->select('id', 'name', 'email','created_at','updated_at')
                                  ->where('name','LIKE','%' .$text.'%')
                                  ->orWhere('id','LIKE','%' .$text.'%')
                                  ->orderby('name','asc')
                                  ->paginate(10);
-        return view('users.index', [
-            'users'=> $users
-        ], compact('users','text'));
+       return view('users.index', compact('users','text'));
     }
-
+    /*
     public function store( )
     {
         //
@@ -37,7 +33,8 @@ class UserController extends Controller
     public function destroy()
     {
         //
-    */    }
+        }
+    */
 }
 
 /*

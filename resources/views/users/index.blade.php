@@ -17,10 +17,10 @@
             <h4 style= "text-align: center;">Gestión de Clientes</h4>
             <div class="row">
                 <div class="col-sm-6 mx-auto my-2" >
-                    <form action="" style= "display: flex;">
+                    <form action="{{ route('user.index') }}" method="GET" style= "display: flex;">
                         <tr>
                             <td class="form-row ">
-                                <input type="text" class="form-control" name= "text">
+                                <input type="text" class="form-control" name= "text" value="{{ $text }}">
                             </td>
 
                             <td class="col-sm-2 mx-auto my-3">
@@ -30,7 +30,7 @@
                     </form>
                 </div>
                 <!-- Ver la tabla de resultados -->
-                    <div class="col-lx-8 mx-auto">
+                    <div class="col-xl-12 mx-auto">
 
 
                     <table class="table table-striped">
@@ -41,12 +41,32 @@
                                 <th>Email</th>
                                 <th>Fecha creación</th>
                                 <th>Última actualización</th>
-                                <th>&nbsp;</th>
-                                <th>&nbsp;</th>
+                                <th colspan="2" style="text-align: center">Opciones de registro</th>
+
                             </tr>
                         </thead>
+                        <tbody>
+                        @if(count($users)<=0)
+                            <tr>
+                                <td colspan="7" style="text-align: center"><h2>No hay resultados</h2></td>
+                            </tr>
+                        @else
 
+                        @foreach ($users as $user)
+                            <tr>
+                                <td>{{ $user->id}}</td>
+                                <td>{{ $user->name}}</td>
+                                <td>{{ $user->email}}</td>
+                                <td>{{ $user->created_at}}</td>
+                                <td>{{ $user->updated_at}}</td>
+                                <td>editar</td>
+                                <td>eliminar</td>
+                            </tr>
+                        @endforeach
+                        @endif
+                        </tbody>
                     </table>
+                    {{$users->links()}}
                 </div>
 
             </div>
