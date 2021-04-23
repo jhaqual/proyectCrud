@@ -19,12 +19,23 @@ class UserController extends Controller
                                  ->paginate(10);
        return view('users.index', compact('users','text'));
     }
-    /*
-    public function store( )
+
+    public function create( )
     {
-        //
+        return view('users.create');
     }
 
+    public function store( Request $request)
+    {
+        $users = new user;
+        $users->name=$request->input('nombre');
+        $users->email=$request->input('email');
+        $users->created_at=$request->input('Fecha creación');
+        $users->updated_at=$request->input('Última actualización');
+        $users->save();
+        return redirect()->route('user.index');
+    }
+/*
     public function edit()
     {
         //

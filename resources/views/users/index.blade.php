@@ -16,16 +16,20 @@
         <div class="container">
             <h4 style= "text-align: center;">Gestión de Clientes</h4>
             <div class="row">
-                <div class="col-sm-6 mx-auto my-2" >
+                <div class="col-sm-5 mx-auto my-2" >
                     <form action="{{ route('user.index') }}" method="GET" style= "display: flex;">
                         <tr>
                             <td class="form-row ">
                                 <input type="text" class="form-control" name= "text" value="{{ $text }}">
                             </td>
 
-                            <td class="col-sm-2 mx-auto my-3">
-                                <input type="submit" class="btn btn-primary" value="Buscar" style="margin-left: 10px;">
+                            <td class="col-sm-1 mx-auto my-3">
+                                <input type="submit" class="btn btn-danger" value="Buscar" style="margin-left: 10px;">
                             </td>
+                            <td class="col-sm-1 mx-auto my-3">
+                                <a href="{{ route('user.create') }}" class="btn btn-primary" style="margin-left: 10px;">Nuevo</a>
+                            </td>
+
                         </tr>
                     </form>
                 </div>
