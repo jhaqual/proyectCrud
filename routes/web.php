@@ -14,12 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::resource('/user',UserController::class);
 
-Route::get('/', 'UserController@index');
-Route::post('users', 'UserController@store')->name('users.store');
-Route::post('users/{user}', 'UserController@edit')->name('users.edit');
-Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
 
+
+
+// Configuración A
+/*
+/ Route::get('/', 'UserController@index')->name('users.index');
+/ Route::post('users', 'UserController@store')->name('users.store');
+/ Route::post('users/{user}', 'UserController@edit')->name('users.edit');
+/ Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
+*/
 
 
 // Otra forma de configurar los controladores

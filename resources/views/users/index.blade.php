@@ -29,51 +29,22 @@
                         </tr>
                     </form>
                 </div>
-                    <div class="col-sm-8 mx-auto">
+                <!-- Ver la tabla de resultados -->
+                    <div class="col-lx-8 mx-auto">
 
 
-                    <table class="table">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Email</th>
+                                <th>Fecha creación</th>
+                                <th>Última actualización</th>
                                 <th>&nbsp;</th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            @foreach ($users as $user)
-                            <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>
-                                    <form action="{{ route('users.edit' , $user) }}" method="GET">
-                                        @method('EDIT')
-                                        @csrf
-                                        <input
-                                        type="submit"
-                                        value="actualizar"
-                                        class="btn btn-sm btn-danger"
-                                        onclick="return confirm('¿Desea eliminar este usuario ?')">
-                                    </form>
-                                </td>
-                                <td>
-                                    <form action="{{ route('users.destroy' , $user) }}" method="POST">
-                                        @method('DELETE')
-                                        @csrf
-                                        <input
-                                        type="submit"
-                                        value="eliminar"
-                                        class="btn btn-sm btn-danger"
-                                        onclick="return confirm('¿Desea eliminar este usuario ?')">
-                                    </form>
-                                </td>
-
-                            </tr>
-                            @endforeach
-                        </tbody>
 
                     </table>
                 </div>
