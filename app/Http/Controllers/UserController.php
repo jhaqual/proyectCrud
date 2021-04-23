@@ -12,10 +12,10 @@ class UserController extends Controller
     {
 
         $text=trim($request->get('text'));
-        $users=DB::table('users')->select('id', 'name', 'email','created_at','updated_at')
+        $users=DB::table('users')->select('id', 'name', 'email','profession','phone')
                                  ->where('name','LIKE','%' .$text.'%')
                                  ->orWhere('id','LIKE','%' .$text.'%')
-                                 ->orderby('name','asc')
+                                 ->orderby('id','asc')
                                  ->paginate(10);
        return view('users.index', compact('users','text'));
     }
@@ -28,10 +28,10 @@ class UserController extends Controller
     public function store( Request $request)
     {
         $users = new user;
-        $users->name=$request->input('nombre');
+        $users->name=$request->input('name');
         $users->email=$request->input('email');
-        $users->created_at=$request->input('Fecha creación');
-        $users->updated_at=$request->input('Última actualización');
+        $users->profession=$request->input('profession');
+        $users->phone=$request->input('phone');
         $users->save();
         return redirect()->route('user.index');
     }

@@ -43,8 +43,8 @@
                                 <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Email</th>
-                                <th>Fecha creación</th>
-                                <th>Última actualización</th>
+                                <th>Profesión</th>
+                                <th>Telefono</th>
                                 <th colspan="2" style="text-align: center">Opciones de registro</th>
 
                             </tr>
@@ -61,8 +61,8 @@
                                 <td>{{ $user->id}}</td>
                                 <td>{{ $user->name}}</td>
                                 <td>{{ $user->email}}</td>
-                                <td>{{ $user->created_at}}</td>
-                                <td>{{ $user->updated_at}}</td>
+                                <td>{{ $user->profession}}</td>
+                                <td>{{ $user->phone}}</td>
                                 <td>editar</td>
                                 <td>eliminar</td>
                             </tr>

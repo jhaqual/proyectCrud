@@ -21,19 +21,19 @@
                 @csrf
                     <div class="form-group">
                         <label for="name">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" required maxlength="80" >
+                        <input type="text" class="form-control" name="name" required required maxlength="80"  >
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" class="form-control" name="email" required maxlength="50" >
                     </div>
                     <div class="form-group">
-                        <label for="created_at">Fecha creación</label>
-                        <input type="text" class="form-control" name="created-at" required maxlength="50" >
+                        <label for="profession">Profesión</label>
+                        <input type="text" class="form-control" name="profession" required maxlength="50" >
                     </div>
                     <div class="form-group">
-                        <label for="updated_at">Última actualización</label>
-                        <input type="text" class="form-control" name="updated_at" required maxlength="50" >
+                        <label for="phone">Telefono</label>
+                        <input type="text" class="form-control" name="phone" required maxlength="50" >
                     </div>
                     <td class="col-sm-1 mx-auto my-3">
                         <input type="submit" class="btn btn-primary" value="Guardar" style="margin: 10px;">

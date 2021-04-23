@@ -44,6 +44,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public $timestamp= false;
+    public $timestamps= false;
+    
 
 }
