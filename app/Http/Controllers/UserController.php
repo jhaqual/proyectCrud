@@ -35,12 +35,29 @@ class UserController extends Controller
         $users->save();
         return redirect()->route('user.index');
     }
-/*
-    public function edit()
+
+    public function edit($id)
     {
-        //
+        $user=User::findOrFail($id);
+        return view('users.edit',compact('user'));
     }
 
+    public function update( Request $request, $id)
+    {
+        $user=User::findOrFail($id);
+        $user->name=$request->input('name');
+        $user->email=$request->input('email');
+        $user->profession=$request->input('profession');
+        $user->phone=$request->input('phone');
+        $user->save();
+        return redirect()->route('user.index');
+
+
+
+
+    }
+
+/*
     public function destroy()
     {
         //

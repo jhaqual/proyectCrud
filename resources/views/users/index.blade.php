@@ -63,8 +63,12 @@
                                 <td>{{ $user->email}}</td>
                                 <td>{{ $user->profession}}</td>
                                 <td>{{ $user->phone}}</td>
-                                <td>editar</td>
-                                <td>eliminar</td>
+                                <td class="col-sm-1 mx-auto my-3">
+                                    <a href="{{ route('user.edit',$user->id) }}" class="btn btn-info" style="margin: 10px;">Editar</a>
+                                </td>
+                                <td class="col-sm-1 mx-auto my-3">
+                                    <a href="#" class="btn btn-dark" style="margin: 10px;"> Eliminar </a>
+                                </td>
                             </tr>
                         @endforeach
                         @endif
