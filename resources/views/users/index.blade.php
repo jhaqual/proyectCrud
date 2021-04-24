@@ -64,12 +64,14 @@
                                 <td>{{ $user->profession}}</td>
                                 <td>{{ $user->phone}}</td>
                                 <td class="col-sm-1 mx-auto my-3">
-                                    <a href="{{ route('user.edit',$user->id) }}" class="btn btn-info" style="margin: 10px;">Editar</a>
+                                    <a href="{{ route('user.edit',$user->id) }}" class="btn btn-info" style="margin-top: 2px;">Editar</a>
                                 </td>
-                                <td class="col-sm-1 mx-auto my-3">
-                                    <a href="#" class="btn btn-dark" style="margin: 10px;"> Eliminar </a>
+                                <td>
+                                    <button type="button" class="btn btn-dark" style="margin-top: 2px;" data-bs-toggle="modal" data-bs-target="#modal-delete-{{ $user->id }}">Eliminar
+                                    </button>
                                 </td>
                             </tr>
+                            @include('users.delete')
                         @endforeach
                         @endif
                         </tbody>
@@ -80,6 +82,10 @@
             </div>
 
         </div>
-
     </body>
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" 
+        crossorigin="anonymous">
+    </script>
 </html>

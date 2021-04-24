@@ -40,10 +40,7 @@
                         <input type="submit" class="btn btn-primary" value="Guardar" style="margin: 10px;">
                     </td>
                     <td class="col-sm-1 mx-auto my-3">
-                        <input type="reset" class="btn btn-warning" value="Cancelar" style="margin: 10px;">
-                    </td>
-                    <td class="col-sm-1 mx-auto my-3">
-                        <a href="javascript:history.back()" class="btn btn-link" style="margin: 10px;"> Ir a listado </a>
+                        <a href="javascript:history.back()" class="btn btn-warning" style="margin: 10px;"> Cancelar </a>
                     </td>
                 </form>
 
